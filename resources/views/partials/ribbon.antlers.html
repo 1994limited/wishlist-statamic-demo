@@ -1,0 +1,7 @@
+{{# The save button: a bookmark ribbon on the cover. #}}
+{{ wishlist:toggle :id="id" :class="large ? 'ribbon-form ribbon-form--large' : 'ribbon-form'" }}
+    <button type="submit" class="ribbon" title="Save {{ title }}">
+        <span class="sr-only" data-wishlist-when="not-added">Save {{ title }}</span>
+        <span class="sr-only" data-wishlist-when="added">Saved: {{ title }}</span>
+    </button>
+{{ /wishlist:toggle }}

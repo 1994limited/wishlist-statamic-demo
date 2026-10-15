@@ -1,0 +1,28 @@
+<div class="shared-head">
+    <p class="eyebrow">A list someone sent you</p>
+    <h1>{{ title }}</h1>
+    <p>{{ count }} {{ count == 1 ? 'book' : 'books' }}. Tap a ribbon to save one to your own list.</p>
+    {{ if !no_results }}{{ unless is_owner }}
+        {{ wishlist:import }}
+            <button type="submit" class="button button--ribbon">Save all {{ count }} to my list</button>
+        {{ /wishlist:import }}
+    {{ /unless }}{{ /if }}
+</div>
+
+{{ if no_results }}
+    <p class="empty" style="margin-inline: auto; text-align: center">Nothing on this list is on our shelves any more.</p>
+{{ else }}
+    <ul class="shelf">
+        {{ items }}
+            <li class="book">
+                {{ partial:cover link="true" }}
+                {{ partial:ribbon }}
+                <div class="shelf__caption">
+                    <a href="{{ url }}">{{ title }}</a>
+                    <span class="meta"><span>{{ byline }}</span><span class="price">£{{ price }}</span></span>
+                    {{ if wishlist_item:notes }}<span class="meta">“{{ wishlist_item:notes }}”</span>{{ /if }}
+                </div>
+            </li>
+        {{ /items }}
+    </ul>
+{{ /if }}

@@ -1,0 +1,52 @@
+<div class="saved-head">
+    <div>
+        <p class="eyebrow">Your lists</p>
+        <h1>Saved books</h1>
+    </div>
+    <label class="picker">List <select data-wishlist-lists></select></label>
+</div>
+
+<div class="saved-layout">
+    {{ wishlist:render partial="saved" }}
+        <p class="empty">Fetching your list…</p>
+    {{ /wishlist:render }}
+
+    <aside class="side">
+        <div class="panel">
+            <h2>Send this list</h2>
+            <p>Anyone with the link can see it, and save the books to their own list.</p>
+            <div class="row">
+                <input data-wishlist-share readonly value="{{ wishlist:share_url }}" aria-label="Link to this list">
+                <button class="button" data-wishlist-copy-share>
+                    <span class="idle">Copy</span><span class="done">Copied</span>
+                </button>
+            </div>
+            <button class="button button--ribbon share-only" data-wishlist-native-share data-wishlist-share-text="Books I'd love: :title">
+                Share…
+            </button>
+        </div>
+
+        <div class="panel">
+            <h2>Start another list</h2>
+            {{ wishlist:create_list }}
+                <div class="row">
+                    <input name="title" placeholder="Birthday, book club…" required aria-label="New list name">
+                    <button type="submit" class="button button--quiet">Start</button>
+                </div>
+            {{ /wishlist:create_list }}
+        </div>
+
+        <div class="panel">
+            <h2>Rename this list</h2>
+            {{ wishlist:rename_list }}
+                <div class="row">
+                    <input name="title" placeholder="New name" required aria-label="New name for this list">
+                    <button type="submit" class="button button--quiet">Rename</button>
+                </div>
+            {{ /wishlist:rename_list }}
+            {{ wishlist:delete_list class="danger" }}
+                <button type="submit" class="link-button">Delete this list</button>
+            {{ /wishlist:delete_list }}
+        </div>
+    </aside>
+</div>

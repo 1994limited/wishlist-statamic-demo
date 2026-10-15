@@ -1,0 +1,27 @@
+<article class="book-page">
+    <div class="book">
+        {{ partial:cover size="large" }}
+        {{ partial:ribbon large="true" }}
+    </div>
+
+    <div>
+        <p class="eyebrow"><a href="/">Shelves</a></p>
+        <h1>{{ title }}</h1>
+        <p class="by">by {{ byline }}</p>
+        <p class="blurb">{{ blurb }}</p>
+        <span class="price">£{{ price }}</span>
+
+        {{ wishlist:add id="{{ id }}" class="keep" }}
+            <label>
+                Who's it for? <span class="meta">(optional)</span>
+                <input name="notes" placeholder="Mum's birthday, the book club…" maxlength="120">
+            </label>
+            <div>
+                <button type="submit" class="button button--ribbon">
+                    <span data-wishlist-when="not-added">Save to my list</span>
+                    <span data-wishlist-when="added">Update my list</span>
+                </button>
+            </div>
+        {{ /wishlist:add }}
+    </div>
+</article>

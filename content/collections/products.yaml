@@ -1,0 +1,3 @@
+title: Books
+route: '/products/{slug}'
+template: products/show

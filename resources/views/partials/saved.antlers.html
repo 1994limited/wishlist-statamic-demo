@@ -1,0 +1,24 @@
+<section>
+    <h2 class="list-title">{{ title }} <span class="meta">{{ count }} {{ count == 1 ? 'book' : 'books' }}</span></h2>
+
+    {{ if no_results }}
+        <p class="empty">Nothing on this list yet. Tap the ribbon on any cover on <a href="/">the shelves</a> to save it here.</p>
+    {{ else }}
+        <ul class="saved-list">
+            {{ items }}
+                <li class="saved-row">
+                    {{ partial:cover size="small" }}
+                    <div>
+                        <h3><a href="{{ url }}">{{ title }}</a></h3>
+                        <span class="meta">{{ byline }} · saved {{ wishlist_item:added_at format="j M" }}</span>
+                        {{ if wishlist_item:notes }}<p class="note">{{ wishlist_item:notes }}</p>{{ /if }}
+                    </div>
+                    <div class="saved-row__end">
+                        <span class="price">£{{ price }}</span>
+                        <button class="link-button" {{ wishlist:toggle_attrs id="{{ id }}" }}>Remove</button>
+                    </div>
+                </li>
+            {{ /items }}
+        </ul>
+    {{ /if }}
+</section>

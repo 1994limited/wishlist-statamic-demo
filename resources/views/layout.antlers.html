@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ segment_1 ? '{title} · Dog-ear Books' : 'Dog-ear Books' }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Atkinson+Hyperlegible:wght@400;700&family=Gloock&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/css/dogear.css">
+    {{ wishlist:scripts }}
+</head>
+<body>
+    <header class="masthead">
+        <div class="wrap">
+            <a class="wordmark" href="/">Dog-ear Books</a>
+            <nav class="nav" aria-label="Main">
+                <a href="/" {{ if segment_1 === '' or segment_1 === 'products' }}aria-current="page"{{ /if }}>Shelves</a>
+                <a class="saved" href="/wishlist" {{ if segment_1 === 'wishlist' }}aria-current="page"{{ /if }}>
+                    Saved <span class="count" data-wishlist-count="all">{{ wishlist:count list="all" }}</span>
+                </a>
+                {{ if logged_in }}
+                    <span class="who">{{ current_user:name }}</span>
+                {{ else }}
+                    <a href="/login">Sign in</a>
+                {{ /if }}
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        {{ if {wishlist:success} }}<p class="flash">{{ wishlist:success }}</p>{{ /if }}
+        {{ if {wishlist:error} }}<p class="flash">{{ wishlist:error }}</p>{{ /if }}
+        {{ template_content }}
+    </main>
+</body>
+</html>

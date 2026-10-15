@@ -1,0 +1,21 @@
+<div class="shop-head">
+    <div>
+        <p class="eyebrow">New this autumn</p>
+        <h1 class="lede">Dog-ear the ones you <em>want.</em></h1>
+        <p class="intro">Save books to a list for later, for a birthday, or for whoever's buying. Send them the link.</p>
+    </div>
+    <p class="hint">Tap the ribbon on a cover to save it.</p>
+</div>
+
+<ul class="shelf">
+    {{ collection:products sort="title" }}
+        <li class="book">
+            {{ partial:cover link="true" }}
+            {{ partial:ribbon }}
+            <div class="shelf__caption">
+                <a href="{{ url }}">{{ title }}</a>
+                <span class="meta"><span>{{ byline }}</span><span class="price">£{{ price }}</span></span>
+            </div>
+        </li>
+    {{ /collection:products }}
+</ul>
