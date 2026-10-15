@@ -25,7 +25,12 @@ Artisan::command('demo:users', function () {
 
     foreach ($accounts as [$email, $name, $super]) {
         $user = \Statamic\Facades\User::findByEmail($email) ?? \Statamic\Facades\User::make()->email($email);
-        $user->set('name', $name)->password('password')->makeSuper($super)->save();
+        $user->set('name', $name)->password('password');
+
+        // makeSuper() takes no argument: it always makes a super user.
+        $super ? $user->makeSuper() : $user->remove('super');
+
+        $user->save();
         $this->info("{$email} / password".($super ? ' (Control Panel)' : ''));
     }
 })->purpose('Create the demo shopper and admin accounts');
