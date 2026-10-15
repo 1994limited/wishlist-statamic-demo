@@ -6,7 +6,7 @@ It shows:
 
 - **Saving with a ribbon.** Each cover's bookmark ribbon is a `{{ wishlist:toggle }}` form. It works without JavaScript, and updates in place with it.
 - **Notes.** A book page saves a "who's it for?" note with the item.
-- **Several lists**, with a picker, rename, delete and "Start another list".
+- **Several lists**, with a picker, rename, delete, "Make this my default list" and "Start another list". A book page saves to whichever list you choose.
 - **Sharing**, with a link to copy, the phone's share sheet where there is one, and a shared page with "Save all to my list".
 - **Guests and accounts.** Save as a guest, sign in, and what you saved moves to your account.
 - **The Control Panel.** Content → Wishlists lists everyone's lists and the books saved most.
@@ -55,7 +55,7 @@ Nothing in the templates changes between drivers.
 | --- | --- |
 | `resources/views/layout.antlers.html` | `{{ wishlist:scripts }}` in `<head>`, the header count, messages |
 | `resources/views/partials/ribbon.antlers.html` | The save button: `{{ wishlist:toggle }}` with `data-wishlist-when` labels |
-| `resources/views/products/show.antlers.html` | Saving with a note: `{{ wishlist:add }}` |
+| `resources/views/products/show.antlers.html` | Saving with a note, to a chosen list: `{{ wishlist:add }}` with a `list` picker |
 | `resources/views/wishlist.antlers.html` | The list picker, share box, and list forms |
 | `resources/views/partials/saved.antlers.html` | The partial `{{ wishlist:render }}` draws each list with |
 | `resources/views/wishlist/shared.antlers.html` | The shared page, with `{{ wishlist:import }}` |

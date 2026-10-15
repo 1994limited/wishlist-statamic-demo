@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.3",
-        "1994/wishlist-statamic": "^1.0",
+        "1994/wishlist-statamic": "^1.2",
         "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0",
         "statamic/cms": "^6.0"

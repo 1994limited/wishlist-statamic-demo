@@ -13,13 +13,17 @@
 
         {{ wishlist:add id="{{ id }}" class="keep" }}
             <label>
+                Save to
+                <select name="list" data-wishlist-lists aria-label="Which list to save to"></select>
+            </label>
+            <label>
                 Who's it for? <span class="meta">(optional)</span>
                 <input name="notes" placeholder="Mum's birthday, the book club…" maxlength="120">
             </label>
             <div>
                 <button type="submit" class="button button--ribbon">
-                    <span data-wishlist-when="not-added">Save to my list</span>
-                    <span data-wishlist-when="added">Update my list</span>
+                    <span data-wishlist-when="not-added">Save it</span>
+                    <span data-wishlist-when="added">Update it on this list</span>
                 </button>
             </div>
         {{ /wishlist:add }}

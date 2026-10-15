@@ -44,6 +44,10 @@
                     <button type="submit" class="button button--quiet">Rename</button>
                 </div>
             {{ /wishlist:rename_list }}
+            {{ wishlist:make_default }}
+                <button type="submit" class="link-button">Make this my default list</button>
+                <p class="meta">The ribbons on the shelves save to your default list.</p>
+            {{ /wishlist:make_default }}
             {{ wishlist:delete_list class="danger" }}
                 <button type="submit" class="link-button">Delete this list</button>
             {{ /wishlist:delete_list }}
