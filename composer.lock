@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "1994/wishlist-statamic",
-            "version": "v1.0.0",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/1994limited/wishlist-statamic.git",
-                "reference": "9619890c9bd6d68b9e9e838b51a542fbc784fbe8"
+                "reference": "959c01f01348a87430a7a4c43b827eb5cafe7186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/1994limited/wishlist-statamic/zipball/9619890c9bd6d68b9e9e838b51a542fbc784fbe8",
-                "reference": "9619890c9bd6d68b9e9e838b51a542fbc784fbe8",
+                "url": "https://api.github.com/repos/1994limited/wishlist-statamic/zipball/959c01f01348a87430a7a4c43b827eb5cafe7186",
+                "reference": "959c01f01348a87430a7a4c43b827eb5cafe7186",
                 "shasum": ""
             },
             "require": {
@@ -70,9 +70,9 @@
             "support": {
                 "email": "hello@1994.co.uk",
                 "issues": "https://github.com/1994limited/wishlist-statamic/issues",
-                "source": "https://github.com/1994limited/wishlist-statamic/tree/v1.0.0"
+                "source": "https://github.com/1994limited/wishlist-statamic/tree/v1.0.3"
             },
-            "time": "2026-10-15T12:51:03+00:00"
+            "time": "2026-10-15T16:06:10+00:00"
         },
         {
             "name": "ajthinking/archetype",
